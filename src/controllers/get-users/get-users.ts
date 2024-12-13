@@ -1,10 +1,9 @@
-import { IGetUsersController, IGetUsersRepository } from "./protocols";
+import { IController } from "../protocols";
+import { IGetUsersRepository } from "./protocols";
 
-export class GetUsersController implements IGetUsersController {
+export class GetUsersController implements IController {
   constructor(private readonly getUsersRepository: IGetUsersRepository) {}
   async handle() {
-    //validar requisição
-    // direcionar chamada para o Repository
     try {
       const users = await this.getUsersRepository.getUsers();
 
