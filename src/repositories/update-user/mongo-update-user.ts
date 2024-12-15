@@ -1,5 +1,4 @@
 import { ObjectId } from "mongodb";
-
 import {
   IUpdateUserRepository,
   UpdateUserParams,
@@ -19,6 +18,7 @@ export class MongoUpdateUserRepository implements IUpdateUserRepository {
       }
     );
 
+    // Busca o usuário atualizado
     const user = await MongoClient.db
       .collection<MongoUser>("users")
       .findOne({ _id: new ObjectId(id) });
@@ -27,8 +27,6 @@ export class MongoUpdateUserRepository implements IUpdateUserRepository {
       throw new Error("User not updated");
     }
 
-    const { _id, ...rest } = user;
-
-    return { id: _id.toHexString(), ...rest };
+    return MongoClient.mapUser(user);
   }
 }
