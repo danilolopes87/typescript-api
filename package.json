@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch \"src/\" --exec \"node_modules/.bin/ts-node src/index.ts\" -e ts",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +33,7 @@
     "globals": "^15.12.0",
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.3",
+    "typescript": "^5.7.2",
     "typescript-eslint": "^8.15.0"
   }
 }
