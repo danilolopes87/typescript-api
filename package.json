@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch \"src/\" --exec \"node_modules/.bin/ts-node src/index.ts\" -e ts",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build": "tsc --project tsconfig.json",
+    "start": "node build/index.js"
   },
   "keywords": [],
   "author": "",
