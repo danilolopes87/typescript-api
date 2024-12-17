@@ -7,7 +7,7 @@ export const MongoClient = {
   db: undefined as unknown as Db,
 
   async connect(): Promise<void> {
-    const url = process.env.MONGODB_URL || "localhost: 27017";
+    const url = process.env.MONGODB_URL || "localhost:27017";
     const username = process.env.MONGO_USERNAME;
     const password = process.env.MONGO_PASSWORD;
 
